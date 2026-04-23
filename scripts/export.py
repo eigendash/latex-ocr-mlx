@@ -47,7 +47,8 @@ def main():
 
     size = (out / "weights.safetensors").stat().st_size / 1e6
     n = sum(v.size for v in weights.values())
-    print(f"{len(weights)} tensors, {n / 1e6:.2f}M values, {size:.1f} MB as {dtype}")
+    name = str(dtype).split(".")[-1]
+    print(f"{len(weights)} tensors, {n / 1e6:.2f}M values, {size:.1f} MB as {name}")
 
 
 if __name__ == "__main__":
